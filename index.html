@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VANTA — Creative Agency</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400;1,700;1,900&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══ FIXED NAV ═══════════════════════════════════════════ -->
+  <nav class="nav" id="nav">
+    <div class="nav__wordmark">VANTA</div>
+    <div class="nav__pills">
+      <a href="#about"    class="nav__pill">About</a>
+      <a href="#services" class="nav__pill">Services</a>
+      <a href="#work"     class="nav__pill">Work</a>
+      <a href="#contact"  class="nav__pill">Contact</a>
+    </div>
+    <button class="nav__cta" id="openBookingNav">Book a call</button>
+  </nav>
+
+  <!-- ═══ HERO ════════════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <video class="hero__video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=1600&q=80">
+      <source src="https://assets.mixkit.co/videos/preview/mixkit-ink-swirling-in-water-in-slow-motion-21-large.mp4" type="video/mp4" />
+    </video>
+    <div class="hero__vignette"></div>
+
+    <!-- Large italic serif headline over the video -->
+    <h1 class="hero__headline">
+      <span class="hero__line" data-order="0">We make</span>
+      <span class="hero__line hero__line--accent" data-order="1">brands</span>
+      <span class="hero__line" data-order="2">unforgettable.</span>
+    </h1>
+
+    <!-- CHIP: Stats — bottom left -->
+    <div class="chip chip--stats" data-chip="0">
+      <p class="chip__eyebrow">In numbers</p>
+      <div class="chip__stats-row">
+        <div class="chip__stat">
+          <span class="chip__num">142</span>
+          <span class="chip__lbl">Clients</span>
+        </div>
+        <div class="chip__divider"></div>
+        <div class="chip__stat">
+          <span class="chip__num">8</span>
+          <span class="chip__lbl">Years</span>
+        </div>
+        <div class="chip__divider"></div>
+        <div class="chip__stat">
+          <span class="chip__num">99%</span>
+          <span class="chip__lbl">Retention</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHIP: Services — right edge -->
+    <div class="chip chip--services" data-chip="1">
+      <p class="chip__eyebrow">What we do</p>
+      <ul class="chip__service-list">
+        <li>Brand Identity</li>
+        <li>Web Design</li>
+        <li>Motion &amp; Film</li>
+        <li>Strategy</li>
+      </ul>
+    </div>
+
+    <!-- CHIP: Booking — top right -->
+    <div class="chip chip--booking" data-chip="2">
+      <p class="chip__eyebrow">Next available</p>
+      <p class="chip__date" id="nextSlot">Thu, Apr 3 — 10:00 AM</p>
+      <button class="chip__btn" id="openBookingChip">Reserve slot →</button>
+    </div>
+
+    <!-- CHIP: AI Search — bottom right -->
+    <div class="chip chip--search" data-chip="3">
+      <p class="chip__eyebrow">✦ AI Search</p>
+      <div class="search__row">
+        <input class="search__input" id="aiSearch" type="text" autocomplete="off" spellcheck="false" />
+        <button class="search__submit" id="searchBtn" aria-label="Search">→</button>
+      </div>
+      <div class="search__answer" id="searchAnswer"></div>
+    </div>
+  </section>
+
+  <!-- ═══ ABOUT ════════════════════════════════════════════════ -->
+  <section class="about" id="about">
+    <div class="about__inner">
+      <span class="eyebrow">Who we are</span>
+      <h2 class="section__title">A studio obsessed with<br><em>the work.</em></h2>
+      <p class="about__body">We're a tight-knit creative agency built for brands that refuse to be forgettable. From early-stage startups to decade-old companies ready for reinvention — we do the hard work of figuring out what makes you different, then make it impossible to ignore.</p>
+    </div>
+    <div class="about__marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Brand Identity</span><span class="marquee__dot">◈</span>
+        <span>Web Design</span><span class="marquee__dot">◈</span>
+        <span>Motion &amp; Film</span><span class="marquee__dot">◈</span>
+        <span>Strategy</span><span class="marquee__dot">◈</span>
+        <span>Brand Identity</span><span class="marquee__dot">◈</span>
+        <span>Web Design</span><span class="marquee__dot">◈</span>
+        <span>Motion &amp; Film</span><span class="marquee__dot">◈</span>
+        <span>Strategy</span><span class="marquee__dot">◈</span>
+        <span>Brand Identity</span><span class="marquee__dot">◈</span>
+        <span>Web Design</span><span class="marquee__dot">◈</span>
+        <span>Motion &amp; Film</span><span class="marquee__dot">◈</span>
+        <span>Strategy</span><span class="marquee__dot">◈</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SERVICES ═════════════════════════════════════════════ -->
+  <section class="services" id="services">
+    <div class="services__header">
+      <span class="eyebrow">What we offer</span>
+      <h2 class="section__title">End-to-end creative <em>mastery</em></h2>
+    </div>
+    <div class="services__grid">
+      <div class="card" data-card="0">
+        <div class="card__glyph">◈</div>
+        <h3 class="card__name">Brand Identity</h3>
+        <p class="card__desc">Logos, visual systems, and brand guidelines that make you unmistakable across every touchpoint.</p>
+        <div class="card__footer">
+          <span class="card__price">From $8K</span>
+          <span class="card__arrow">→</span>
+        </div>
+      </div>
+      <div class="card" data-card="1">
+        <div class="card__glyph">⬡</div>
+        <h3 class="card__name">Web &amp; Digital</h3>
+        <p class="card__desc">High-conversion websites, web apps, and digital experiences built for performance and delight.</p>
+        <div class="card__footer">
+          <span class="card__price">From $12K</span>
+          <span class="card__arrow">→</span>
+        </div>
+      </div>
+      <div class="card" data-card="2">
+        <div class="card__glyph">◎</div>
+        <h3 class="card__name">Motion &amp; Film</h3>
+        <p class="card__desc">Brand films, social content, and motion systems that stop thumbs and build genuine emotion.</p>
+        <div class="card__footer">
+          <span class="card__price">From $6K</span>
+          <span class="card__arrow">→</span>
+        </div>
+      </div>
+      <div class="card" data-card="3">
+        <div class="card__glyph">△</div>
+        <h3 class="card__name">Strategy</h3>
+        <p class="card__desc">Positioning, naming, and go-to-market strategy grounded in deep research and competitive insight.</p>
+        <div class="card__footer">
+          <span class="card__price">From $4K</span>
+          <span class="card__arrow">→</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WORK ══════════════════════════════════════════════════ -->
+  <section class="work" id="work">
+    <div class="work__header">
+      <span class="eyebrow">Selected work</span>
+      <h2 class="section__title">Recent <em>projects</em></h2>
+    </div>
+    <div class="work__grid">
+      <div class="work__item work__item--tall">
+        <div class="work__thumb" style="--g:linear-gradient(135deg,#0f1629 0%,#1a2a4a 60%,#0e3060 100%)">
+          <div class="work__info">
+            <span class="work__client">Nexus Finance</span>
+            <span class="work__scope">Brand + Web</span>
+          </div>
+        </div>
+      </div>
+      <div class="work__item">
+        <div class="work__thumb" style="--g:linear-gradient(135deg,#2d1b4e 0%,#1a0a2e 100%)">
+          <div class="work__info">
+            <span class="work__client">Orion Health</span>
+            <span class="work__scope">Identity System</span>
+          </div>
+        </div>
+      </div>
+      <div class="work__item">
+        <div class="work__thumb" style="--g:linear-gradient(135deg,#1a2e1a 0%,#0a1f0a 100%)">
+          <div class="work__info">
+            <span class="work__client">Bloom CPG</span>
+            <span class="work__scope">Strategy</span>
+          </div>
+        </div>
+      </div>
+      <div class="work__item work__item--wide">
+        <div class="work__thumb" style="--g:linear-gradient(135deg,#2e1a1a 0%,#1f0a0a 60%,#3d1010 100%)">
+          <div class="work__info">
+            <span class="work__client">Arc Studios</span>
+            <span class="work__scope">Motion &amp; Brand Film</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT ══════════════════════════════════════════════ -->
+  <section class="contact" id="contact">
+    <div class="contact__inner">
+      <h2 class="contact__title">Ready to build something <em>iconic?</em></h2>
+      <p class="contact__sub">No pitch decks, no agency-speak — just honest creative work.</p>
+      <button class="contact__cta" id="openBookingContact">Start a project →</button>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <span class="footer__mark">VANTA</span>
+    <span class="footer__copy">© 2025 Vanta Creative. All rights reserved.</span>
+    <div class="footer__socials">
+      <a href="#" class="footer__link">Twitter</a>
+      <a href="#" class="footer__link">LinkedIn</a>
+      <a href="#" class="footer__link">Instagram</a>
+    </div>
+  </footer>
+
+  <!-- ═══ BOOKING MODAL ════════════════════════════════════════ -->
+  <div class="modal" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="modalHeading">
+    <div class="modal__scrim" id="modalScrim"></div>
+    <div class="modal__panel">
+      <button class="modal__close" id="closeModal" aria-label="Close">✕</button>
+
+      <!-- Progress indicator -->
+      <div class="modal__progress" id="modalProgress">
+        <div class="prog__step active" data-step="1">
+          <span class="prog__num">1</span><span class="prog__lbl">Service</span>
+        </div>
+        <div class="prog__bar"></div>
+        <div class="prog__step" data-step="2">
+          <span class="prog__num">2</span><span class="prog__lbl">Schedule</span>
+        </div>
+        <div class="prog__bar"></div>
+        <div class="prog__step" data-step="3">
+          <span class="prog__num">3</span><span class="prog__lbl">Confirm</span>
+        </div>
+      </div>
+
+      <!-- ── STEP 1: Choose service ── -->
+      <div class="modal__pane" id="pane1">
+        <h3 class="modal__heading" id="modalHeading">What brings you here?</h3>
+        <div class="svc-grid">
+          <button class="svc-btn" data-svc="Brand Identity">◈ Brand Identity</button>
+          <button class="svc-btn" data-svc="Web &amp; Digital">⬡ Web &amp; Digital</button>
+          <button class="svc-btn" data-svc="Motion &amp; Film">◎ Motion &amp; Film</button>
+          <button class="svc-btn" data-svc="Strategy">△ Strategy</button>
+          <button class="svc-btn svc-btn--span" data-svc="Just exploring">✦ Not sure yet — just exploring</button>
+        </div>
+        <div class="modal__actions modal__actions--right">
+          <button class="btn-next" id="p1Next" disabled>Continue →</button>
+        </div>
+      </div>
+
+      <!-- ── STEP 2: Calendar + time ── -->
+      <div class="modal__pane modal__pane--hidden" id="pane2">
+        <h3 class="modal__heading">Pick a time</h3>
+        <div id="calendarRoot"></div>
+        <div class="timepicker" id="timepicker">
+          <p class="timepicker__label">Available times for <span id="chosenDateLabel">—</span></p>
+          <div class="timepicker__slots" id="slots"></div>
+        </div>
+        <div class="modal__actions">
+          <button class="btn-back" id="p2Back">← Back</button>
+          <button class="btn-next" id="p2Next" disabled>Continue →</button>
+        </div>
+      </div>
+
+      <!-- ── STEP 3: Confirm ── -->
+      <div class="modal__pane modal__pane--hidden" id="pane3">
+        <h3 class="modal__heading">Almost there</h3>
+        <div class="field">
+          <label class="field__label">Your name</label>
+          <input class="field__input" id="fName" type="text" placeholder="Alex Chen" />
+        </div>
+        <div class="field">
+          <label class="field__label">Email address</label>
+          <input class="field__input" id="fEmail" type="email" placeholder="alex@company.com" />
+        </div>
+        <div class="booking-summary" id="bookingSummary"></div>
+        <div class="modal__actions">
+          <button class="btn-back" id="p3Back">← Back</button>
+          <button class="btn-confirm" id="p3Confirm">Confirm booking →</button>
+        </div>
+      </div>
+
+      <!-- ── SUCCESS ── -->
+      <div class="modal__pane modal__pane--hidden modal__pane--success" id="paneSuccess">
+        <div class="success__ring">✓</div>
+        <h3 class="modal__heading">You're booked.</h3>
+        <p class="success__note">We'll send a calendar invite to your inbox. Talk soon.</p>
+        <div class="modal__actions modal__actions--center">
+          <button class="btn-next" id="successClose">Done</button>
+        </div>
+      </div>
+
+    </div><!-- /.modal__panel -->
+  </div><!-- /.modal -->
+
+  <script src="main.js"></script>
+</body>
+</html>
