@@ -28,6 +28,8 @@
       <source src="https://assets.mixkit.co/videos/preview/mixkit-ink-swirling-in-water-in-slow-motion-21-large.mp4" type="video/mp4" />
     </video>
     <div class="hero__vignette"></div>
+    <!-- Three.js 3D canvas — sits between video and chips -->
+    <canvas class="hero__canvas" id="heroCanvas"></canvas>
 
     <!-- Large italic serif headline over the video -->
     <h1 class="hero__headline">
@@ -300,6 +302,8 @@
     </div><!-- /.modal__panel -->
   </div><!-- /.modal -->
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="main.js"></script>
+  <script src="hero3d.js"></script>
 </body>
 </html>

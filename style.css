@@ -153,6 +153,16 @@ body {
   z-index: 0;
 }
 
+/* Three.js 3D canvas — above video/vignette, below headline + chips */
+.hero__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
 /* subtle edge darkening — leaves the centre clear */
 .hero__vignette {
   position: absolute;
